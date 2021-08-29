@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { Produto } from "./Produto";
 
 @Injectable()
 export class ProdutoService{
@@ -10,7 +11,11 @@ export class ProdutoService{
 
     protected UrlService: string = "https://localhost:44335/api/Produtos"
 
-    getProdutos(): Observable<any[]>{
-        return this.http.get<any[]>(this.UrlService + '/ProdutosCategorias');
+    getProdutosCategorias(): Observable<Produto[]>{
+        return this.http.get<Produto[]>(this.UrlService + '/ProdutosCategorias');
+    }
+
+    getProdutosPorId(id: number): Observable<Produto>{
+        return this.http.get<Produto>(this.UrlService + '/Produtos/' + id);
     }
 }

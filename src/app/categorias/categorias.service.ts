@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Categoria } from './Categoria';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CategoriasService {
 
   constructor(private http: HttpClient) { }

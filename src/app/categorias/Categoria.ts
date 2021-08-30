@@ -1,5 +1,5 @@
 export class Categoria{
-    id: string = '';
+    categoriaId: string = '';
     nome: string = '';
     imagemUrl: string = '';
 }

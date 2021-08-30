@@ -1,0 +1,25 @@
+
+<div class="container main-container">
+    <div class="card">
+        <div class="card-header">
+            <h4>{{ servico.nome }}</h4>
+        </div>
+        <div class="card-body">
+            <div class="row d-flex align-items-center">
+                <div class="col-md-5 ml-3">
+                    <img src="{{ servico.imagemUrl }}" alt="imagemUrl" height="400px" width="500px">
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <div class="text-center mt-5">
+                        <h1 class="text-primary"><b>{{ servico.preco | currency:'BRL':'symbol':'1.2-2':'pt' }}</b></h1>
+                        <small style="margin-right: 60px;">Até 10x de <b>{{ divisao() | currency:'BRL':'symbol':'1.2-2':'pt' }}</b></small>
+                    </div>
+                    <div style="margin-top: 80px;">
+                        <p style="font-size: 20px;" class="text-justify">{{ servico.descricao }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

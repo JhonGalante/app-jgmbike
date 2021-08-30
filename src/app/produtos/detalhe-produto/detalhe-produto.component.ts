@@ -13,9 +13,8 @@ export class DetalheProdutoComponent implements OnInit {
 
   private produtoId: string = '';
   public produto: Produto = new Produto();
-  public categoriaNome: string = '';
 
-  constructor(private produtoService: ProdutoService, private categoriaService: CategoriasService, private route: ActivatedRoute) { 
+  constructor(private produtoService: ProdutoService, private route: ActivatedRoute) { 
       route.params.subscribe(params => this.produtoId = params['id']);
   }
 
@@ -23,11 +22,6 @@ export class DetalheProdutoComponent implements OnInit {
     this.produtoService.getProdutosPorId(this.produtoId).subscribe(
       produto => {
         this.produto = produto;
-        this.categoriaService.getCategoriaById(this.produto.categoriaId).subscribe(
-          categoria => {
-            this.categoriaNome = categoria.nome;
-          }
-        );
       },
       error => {
         console.log(error);

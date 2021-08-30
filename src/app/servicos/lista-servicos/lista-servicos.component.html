@@ -1,0 +1,28 @@
+<div class="container main-container">
+    <div class="card">
+        <div class="card-header">
+            <h4>Serviços</h4>
+        </div>
+        <div class="card-body">
+            <div class="row text-center">
+                <div *ngIf="servicos.length == 0">
+                    Nenhum serviço cadastrado
+                </div>
+                <div *ngFor="let servico of servicos" class="col-md-4 pb-5">
+                    <div class="card border-0 h-100" style="width: 18rem;">
+                        <img class="card-img-top" src="{{servico.imagemUrl}}" alt="Imagem de capa do card" height="164px" width="253px">
+                        <h5 class="card-title">{{servico.nome | titlecase }}</h5>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <h4 class="card-text">
+                                    {{servico.preco | currency:'BRL':'symbol':'1.2-2':'pt'}}
+                                </h4>
+                            </div>
+                          <a [routerLink]="['/detalhe-servico', servico.servicoId]" routerLinkActive="router-link-active"  class="btn btn-primary">Detalhes</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -38,7 +38,6 @@ export class ListaProdutoComponent implements OnInit{
       this.produtoService.getProdutosPorCategoria(this.categoriaId).subscribe(
         produtos => {
           this.produtos = produtos;
-
           this.categoriaService.getCategoriaById(this.categoriaId).subscribe(
             categoria => {
               this.categoriaNome = categoria.nome;

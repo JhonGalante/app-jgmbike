@@ -6,8 +6,9 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DetalheProdutoComponent } from './produtos/detalhe-produto/detalhe-produto.component';
 import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
-import { ListaServicosComponent } from './produtos/lista-servicos/lista-servicos.component';
+import { ListaServicosComponent } from './servicos/lista-servicos/lista-servicos.component';
 import { CustomReuseStrategy } from './reuse-strategy';
+import { DetalheServicoComponent } from './servicos/detalhe-servico/detalhe-servico.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'produtos/:id', component: ListaProdutoComponent },
   { path: 'detalhe-produto/:id', component: DetalheProdutoComponent },
   { path: 'servicos', component: ListaServicosComponent },
+  { path: 'detalhe-servico/:id', component: DetalheServicoComponent },
   { path: 'sobre', component: SobreComponent },
   { path: 'contato', component: ContatoComponent },
   { path: '**', component: PageNotFoundComponent },

@@ -15,9 +15,12 @@ import { HomeComponent } from './home/home.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
 import { ContatoComponent } from './institucional/contato/contato.component';
 import { ProdutoService } from './produtos/produtos.service';
-import { ListaServicosComponent } from './produtos/lista-servicos/lista-servicos.component';
+import { ListaServicosComponent } from './servicos/lista-servicos/lista-servicos.component';
 import { DetalheProdutoComponent } from './produtos/detalhe-produto/detalhe-produto.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DetalheServicoComponent } from './servicos/detalhe-servico/detalhe-servico.component';
+import { ServicosService } from './servicos/servicos.service';
+import { CategoriasService } from './categorias/categorias.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ContatoComponent,
     ListaServicosComponent,
     DetalheProdutoComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DetalheServicoComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HttpClientModule
   ],
   providers: [
-    ProdutoService
+    ProdutoService,
+    ServicosService,
+    CategoriasService
   ],
   bootstrap: [AppComponent]
 })

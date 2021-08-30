@@ -15,7 +15,11 @@ export class ProdutoService{
         return this.http.get<Produto[]>(this.UrlService + '/ProdutosCategorias');
     }
 
-    getProdutosPorId(id: number): Observable<Produto>{
-        return this.http.get<Produto>(this.UrlService + '/Produtos/' + id);
+    getProdutosPorId(id: string): Observable<Produto>{
+        return this.http.get<Produto>(this.UrlService + "/" + id);
+    }
+
+    getProdutosPorCategoria(idCategoria: string): Observable<Produto[]>{
+        return this.http.get<Produto[]>(this.UrlService + '/ProdutosPorCategoria/' + idCategoria);
     }
 }

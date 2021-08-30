@@ -1,23 +1,33 @@
 <div class="container main-container">
-    <div class="row text-center">
-        <div *ngFor="let produto of produtos" class="col-md-4 pb-5">
-            <div class="card border-0 h-100" style="width: 18rem;">
-                <img class="card-img-top" src="{{produto.imagemUrl}}" alt="Imagem de capa do card" height="164px" width="253px">
-                <h5 class="card-title">{{produto.nome | titlecase }}</h5>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <h4 class="card-text">
-                            {{produto.preco | currency:'BRL':'symbol':'1.2-2':'pt'}}
-                            <br>
-                            <small *ngIf="produto.disponivel; else falseBlock">Em estoque</small>
-                            <ng-template #falseBlock>
-                                <small>Indisponível</small>
-                            </ng-template>
-                        </h4>
-                    </div>
-                  <a [routerLink]="['/detalhe-produto', produto.produtoId]" routerLinkActive="router-link-active"  class="btn btn-primary">Detalhes</a>
+    <div class="card">
+        <div class="card-header">
+            <h4>{{ categoriaNome }}</h4>
+        </div>
+        <div class="card-body">
+            <div class="row text-center">
+                <div *ngIf="produtos.length == 0">
+                    Nenhum produto cadastrado
                 </div>
-              </div>
+                <div *ngFor="let produto of produtos" class="col-md-4 pb-5">
+                    <div class="card border-0 h-100" style="width: 18rem;">
+                        <img class="card-img-top" src="{{produto.imagemUrl}}" alt="Imagem de capa do card" height="164px" width="253px">
+                        <h5 class="card-title">{{produto.nome | titlecase }}</h5>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <h4 class="card-text">
+                                    {{produto.preco | currency:'BRL':'symbol':'1.2-2':'pt'}}
+                                    <br>
+                                    <small *ngIf="produto.disponivel; else falseBlock">Em estoque</small>
+                                    <ng-template #falseBlock>
+                                        <small>Indisponível</small>
+                                    </ng-template>
+                                </h4>
+                            </div>
+                          <a [routerLink]="['/detalhe-produto', produto.produtoId]" routerLinkActive="router-link-active"  class="btn btn-primary">Detalhes</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

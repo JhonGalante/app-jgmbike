@@ -21,7 +21,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DetalheServicoComponent } from './servicos/detalhe-servico/detalhe-servico.component';
 import { ServicosService } from './servicos/servicos.service';
 import { CategoriasService } from './categorias/categorias.service';
-
 @NgModule({
   declarations: [
     AppComponent,

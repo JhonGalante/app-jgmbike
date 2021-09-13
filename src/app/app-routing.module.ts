@@ -9,6 +9,7 @@ import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.co
 import { ListaServicosComponent } from './servicos/lista-servicos/lista-servicos.component';
 import { CustomReuseStrategy } from './reuse-strategy';
 import { DetalheServicoComponent } from './servicos/detalhe-servico/detalhe-servico.component';
+import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
